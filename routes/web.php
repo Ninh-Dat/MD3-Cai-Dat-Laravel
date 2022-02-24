@@ -13,10 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/baithuhanh', function () {
-    echo ('Bài Thực Hành');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+//Route::get('/baithuhanh', function () {
+//    echo ('Bài Thực Hành');
+//});
 
+Route::get('/baithuhanh/{name?}', function ($name = null) {
+    if ($name) {
+        echo 'Hello ' . $name . '!';
+    } else {
+        echo 'Hello World!';
+    }
+});
